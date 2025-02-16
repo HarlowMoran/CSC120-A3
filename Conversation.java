@@ -1,5 +1,6 @@
-
+import java.util.Scanner;
 class Conversation implements Chatbot {
+
 
   // Attributes 
 
@@ -7,14 +8,41 @@ class Conversation implements Chatbot {
    * Constructor 
    */
   Conversation() {
-    
+    /**Ask user to imput the number of rounds */
+    Scanner imput = new Scanner(System.in);
+    System.out.println("How many rounds?");
+    int rounds = imput.nextInt();
+
+    /**Engage in back-and-forth with the user */
+    Scanner scanner = new Scanner(System.in);
+    System.out.println("Welcome! What's up?");
+    /**Create a while loop where cthe user is given a response and prompted to say more for 1cless than however many rounds they entered*/
+    int i = 0;
+    while (i < (rounds-1)){
+      i++;
+      String response = scanner.nextLine();
+      if(response.equals("")){
+        System.out.println("What's up?");
+      } 
+      else{
+        System.out.println("Intersting. Tell me more!");
+      }
+      
+    }
+    String response = scanner.nextLine();
+    System.out.println("Is there anything else you would like to share with me before we finish chatting?");
+    String finalResponse = scanner.nextLine();
+
+    System.out.println("Okay! I have enjoyed our converstion. Thanks for chatting!");
+
+
   }
 
   /**
    * Starts and runs the conversation with the user
    */
   public void chat() {
-
+    
   }
 
   /**
