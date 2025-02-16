@@ -16,7 +16,8 @@ class Conversation implements Chatbot {
     /**Engage in back-and-forth with the user */
     Scanner scanner = new Scanner(System.in);
     System.out.println("Welcome! What's up?");
-    /**Create a while loop where cthe user is given a response and prompted to say more for 1cless than however many rounds they entered*/
+
+    /**Create a while loop where the user is given a response and prompted to say more for 1 less rounds than however many rounds they entered*/
     int i = 0;
     while (i < (rounds-1)){
       i++;
@@ -29,10 +30,13 @@ class Conversation implements Chatbot {
       }
       
     }
+    
+    /*give the final round some variation, and inform the user that the chat is coming to an end */
     String response = scanner.nextLine();
     System.out.println("Is there anything else you would like to share with me before we finish chatting?");
     String finalResponse = scanner.nextLine();
-
+    
+    /**Ends the conversation */
     System.out.println("Okay! I have enjoyed our converstion. Thanks for chatting!");
 
 
