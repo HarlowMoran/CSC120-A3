@@ -47,7 +47,6 @@ class Conversation implements Chatbot {
       } 
       else{
         System.out.println(mirrorWord(response));
-         //System.out.println("Intersting. Tell me more!");
          transcript.add(mirrorWord(response));
       }
       
@@ -68,7 +67,12 @@ class Conversation implements Chatbot {
 
   
   }
-    /** adds more complexity by changing certain words/characters to look like the chatbot is creacting to what the user is inputing */
+    /**
+     * Adds more complexity by changing certain words/characters to look like the chatbot
+     * is reacting to what the user is inputing.
+     * @param s
+     * @return String with new mirrorword or a canned response
+     */
   public String mirrorWord(String s) {
     if(s.contains("I'm")){
       s = s.replace( "I'm", "You're") ;
