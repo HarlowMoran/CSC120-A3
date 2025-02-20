@@ -7,8 +7,8 @@ Use this file to record your reflection on this assignment.
 - What worked, what didn't, what advice would you give someone taking this course in the future?
 
 
-1. I consulted with Eva and Milika for this assignment. 
-2. 
+1. I consulted with Eva and Milika for this assignment. I also worked with Gemma when we were in TA hours together.
+2. I attended 7-9pm office hours and recieved help from a tutor named Ashley.
 3. I am in an unusual situation where I have only ever coded in Java. So while on the last assignment I felt like I was scrabling to understnd syntax, this  assignment felt a lot easier because all I had to worry about was fufilling the actual assignment, rather than figuring out the language simultaneously with the assignment.
 4. It seems like the general structure in the same between the two langauges. For example, classes and methods seem fairly similar.
-5. I was very thankful to have remebered the use of Scanner. I didn't really understand how to alter the responses, though, looking for keywords.
+5. I was very thankful to have remebered the use of Scanner. I didn't really understand how to alter the responses, though, looking for keywords. However going to tutoring/TA hours was incredibly helpful, and the tutor taught me how to use mirrorWords().
