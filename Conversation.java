@@ -1,4 +1,5 @@
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Scanner;
 class Conversation implements Chatbot {
 
@@ -37,7 +38,7 @@ class Conversation implements Chatbot {
 
     /**Create a while loop where the user is given a response and prompted to say more for 1 less rounds than however many rounds they entered*/
     int i = 1;
-    while (i < (rounds-1)){
+    while (i < (rounds)){
       i++;
       String response = scanner.nextLine();
       transcript.add(response  + "\n");
@@ -46,19 +47,25 @@ class Conversation implements Chatbot {
         transcript.add("What's up? \n");
       } 
       else{
-        System.out.println(mirrorWord(response));
+        if(i <= rounds - 1){
+        System.out.println(mirrorWord(response) +"...Tell me more!");
+         transcript.add(mirrorWord(response) +"...Tell me more!");
+        }
+        else{
+          System.out.println(mirrorWord(response));
          transcript.add(mirrorWord(response));
+        }
       }
       
     }
     
     /**give the final round some variation, and inform the user that the chat is coming to an end */
-    String response = scanner.nextLine();
-    transcript.add(response +"\n");
-    System.out.println("Is there anything else you would like to share with me before we finish chatting?");
-    transcript.add("Is there anything else you would like to share with me before we finish chatting? \n");
-    String finalResponse = scanner.nextLine();
-    transcript.add(finalResponse + "\n");
+    //String response = scanner.nextLine();
+   // transcript.add(response +"\n");
+   // System.out.println("Is there anything else you would like to share with me before we finish chatting?");
+   // transcript.add("Is there anything else you would like to share with me before we finish chatting? \n");
+    //String finalResponse = scanner.nextLine();
+    //transcript.add(finalResponse + "\n");
     
     /**Ends the conversation */
     System.out.println("Okay! I have enjoyed our converstion. Thanks for chatting!");
@@ -74,18 +81,91 @@ class Conversation implements Chatbot {
      * @return String with new mirrorword or a canned response
      */
   public String mirrorWord(String s) {
-    if(s.contains("I'm")){
-      s = s.replace( "I'm", "You're") ;
-    }
-    else if(s.contains(".")){
-      s = s.replace(".", "?");
-    }
-    else{
-      return "Interesting! Tell me more!";
-    }
-    return s + "...Tell me more";
     
+    s.split(" ");
+    ArrayList<String> sentence = new ArrayList<>(Arrays.asList(s.split(" ")));
+    for (int i = 0; i< sentence.size(); i++){
+     if(sentence.get(i).equals("I")){
+      sentence.set(i, "Mirror1");
+     }
+     else if(sentence.get(i).equals("i")){
+      sentence.set(i, "Mirror2");
+     }
+    else if(sentence.get(i).equals("Me")){
+      sentence.set(i, "Mirror3");
+      }
+     else if(sentence.get(i).equals("me")){
+        sentence.set(i, "Mirror4");
+        }
+      
+      else if(sentence.get(i).equals("am")){
+        sentence.set(i, "Mirror5");
+      } 
+      else if(sentence.get(i).equals("Am")){
+        sentence.set(i, "Mirror6");
+      } 
+      else if(sentence.get(i).equals("you")){
+        sentence.set(i, "Mirror7");
+      }
+      else if(sentence.get(i).equals("You")){
+        sentence.set(i, "Mirror8");
+      }
+      else if(sentence.get(i).equals("my")){
+        sentence.set(i, "Mirror9");
+      }
+      else if(sentence.get(i).equals("My")){
+        sentence.set(i, "Mirror10");
+      }
+      else if(sentence.get(i).equals("your")){
+        sentence.set(i, "Mirror11");
+      }
+      else if(sentence.get(i).equals("Your")){
+        sentence.set(i, "Mirror12");
+      }
+      else{
+        // random canned responses go here. Create an arraylist, randomly return an index.
+      }
+      if(sentence.get(i).equals("Mirror1")){
+        sentence.set(i, "You");
+      }
+      if(sentence.get(i).equals("Mirror2")){
+        sentence.set(i, "you");
+       }
+       if(sentence.get(i).equals("Mirror3")){
+        sentence.set(i, "You");
+       }
+       if(sentence.get(i).equals("Mirror4")){
+        sentence.set(i, "you");
+       }
+       if(sentence.get(i).equals("Mirror5")){
+        sentence.set(i, "are");
+       }
+       if(sentence.get(i).equals("Mirror6")){
+        sentence.set(i, "Are");
+       }
+       if(sentence.get(i).equals("Mirror7")){
+        sentence.set(i, "I");
+       }
+       if(sentence.get(i).equals("Mirror8")){
+        sentence.set(i, "I");
+       }
+       if(sentence.get(i).equals("Mirror9")){
+        sentence.set(i, "your");
+       }
+       if(sentence.get(i).equals("Mirror10")){
+        sentence.set(i, "Your");
+       }
+       if(sentence.get(i).equals("Mirror11")){
+        sentence.set(i, "my");
+       }
+       if(sentence.get(i).equals("Mirror12")){
+        sentence.set(i, "My");
+       }
+
+    }
+    return sentence +"?";
   }
+
 
   /**
    * Prints transcript of conversation
