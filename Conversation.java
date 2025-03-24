@@ -1,3 +1,4 @@
+import java.util.Random;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Scanner;
@@ -48,8 +49,8 @@ class Conversation implements Chatbot {
       } 
       else{
         if(i <= rounds - 1){
-        System.out.println(mirrorWord(response) +"...Tell me more!");
-         transcript.add(mirrorWord(response) +"...Tell me more!");
+        System.out.println(mirrorWord(response));
+         transcript.add(mirrorWord(response));
         }
         else{
           System.out.println(mirrorWord(response));
@@ -85,44 +86,76 @@ class Conversation implements Chatbot {
     s.split(" ");
     ArrayList<String> sentence = new ArrayList<>(Arrays.asList(s.split(" ")));
     for (int i = 0; i< sentence.size(); i++){
-     if(sentence.get(i).equals("I")){
-      sentence.set(i, "Mirror1");
-     }
-     else if(sentence.get(i).equals("i")){
-      sentence.set(i, "Mirror2");
-     }
-    else if(sentence.get(i).equals("Me")){
-      sentence.set(i, "Mirror3");
+      if(sentence.get(i).equals("I")){
+        sentence.set(i, "Mirror1");
       }
-     else if(sentence.get(i).equals("me")){
+      if(sentence.get(i).equals("i")){
+        sentence.set(i, "Mirror2");
+      }
+      if(sentence.get(i).equals("Me")){
+        sentence.set(i, "Mirror3");
+      }
+      if(sentence.get(i).equals("me")){
         sentence.set(i, "Mirror4");
-        }
-      
-      else if(sentence.get(i).equals("am")){
+      }
+      if(sentence.get(i).equals("am")){
         sentence.set(i, "Mirror5");
       } 
-      else if(sentence.get(i).equals("Am")){
+      if(sentence.get(i).equals("Am")){
         sentence.set(i, "Mirror6");
       } 
-      else if(sentence.get(i).equals("you")){
+      if(sentence.get(i).equals("you")){
         sentence.set(i, "Mirror7");
       }
-      else if(sentence.get(i).equals("You")){
+      if(sentence.get(i).equals("You")){
         sentence.set(i, "Mirror8");
       }
-      else if(sentence.get(i).equals("my")){
+      if(sentence.get(i).equals("my")){
         sentence.set(i, "Mirror9");
       }
-      else if(sentence.get(i).equals("My")){
+      if(sentence.get(i).equals("My")){
         sentence.set(i, "Mirror10");
       }
-      else if(sentence.get(i).equals("your")){
+      if(sentence.get(i).equals("your")){
         sentence.set(i, "Mirror11");
       }
-      else if(sentence.get(i).equals("Your")){
+      if(sentence.get(i).equals("Your")){
         sentence.set(i, "Mirror12");
       }
       else{
+        Random random = new Random();
+        int randomNum = random.nextInt(10);
+        if(randomNum == 0){
+          sentence.set(i, "Please go on.");
+        }
+        if(randomNum == 1){
+          sentence.set(i, "Facinating! Tell me more!");
+        }
+        if(randomNum == 2){
+          sentence.set(i, "Interesting! Go on.");
+        }
+        if(randomNum == 3){
+          sentence.set(i, "Please explain.");
+        }
+        if(randomNum == 4){
+          sentence.set(i, "Please tell me more.");
+        }
+        if(randomNum == 5){
+          sentence.set(i, "I am intrigued! Go on.");
+        }
+        if(randomNum == 6){
+          sentence.set(i, "Please continue.");
+        }
+        if(randomNum == 7){
+          sentence.set(i, "I would love to hear more.");
+        }
+        if(randomNum == 8){
+          sentence.set(i, "Do tell!");
+        }
+        if(randomNum == 9){
+          sentence.set(i, "Could you elaborate?");
+        }
+
         // random canned responses go here. Create an arraylist, randomly return an index.
       }
       if(sentence.get(i).equals("Mirror1")){
@@ -163,7 +196,8 @@ class Conversation implements Chatbot {
        }
 
     }
-    return sentence +"?";
+    return (sentence +"?");
+  
   }
 
 
