@@ -18,7 +18,7 @@ ___**YES**__ 1 pt: Program queries user for number of conversation rounds
 
 __**YES**___ 1 pt: Program carries out requested number of conversation rounds
 
-___**NO**__ 1 pt: Allocates static array of canned responses
+___**YES**__ 1 pt: Allocates static array of canned responses
 
 ### Level 2 (3 pts)
 
@@ -26,7 +26,7 @@ ___**YES**__ 1 pt: Uses a canned response when no mirror words detected
 
 ___**YES**__ 1 pt: Detects the requested set of mirror words (at minimum)
 
-___**PART**__ 1 pt: Replaces simple mirror words appropriately (unpunctuated, lowercase)
+___**YES**__ 1 pt: Replaces simple mirror words appropriately (unpunctuated, lowercase)
 
 ### Level 3 (3 pts)
 
