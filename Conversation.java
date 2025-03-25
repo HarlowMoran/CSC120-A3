@@ -45,10 +45,10 @@ class Conversation implements Chatbot {
       String response = scanner.nextLine();
       transcript.add(response  + "\n");
      
-        if(i <= rounds){
+      if(i <= rounds){
         System.out.println(mirrorWord(response));
-         transcript.add(mirrorWord(response));
-        }
+        transcript.add(mirrorWord(response));
+      }
     }
 
     /**Ends the conversation */
@@ -87,88 +87,88 @@ class Conversation implements Chatbot {
     
     s.split(" ");
     ArrayList<String> sentence = new ArrayList<>(Arrays.asList(s.split(" ")));
-    for (int i = 0; i< sentence.size(); i++){
-      if(sentence.get(i).equals("I")){
-        sentence.set(i, "Mirror1");
-      }
-      if(sentence.get(i).equals("i")){
-        sentence.set(i, "Mirror2");
-      }
-      if(sentence.get(i).equals("Me")){
-        sentence.set(i, "Mirror3");
-      }
-      if(sentence.get(i).equals("me")){
-        sentence.set(i, "Mirror4");
-      }
-      if(sentence.get(i).equals("am")){
-        sentence.set(i, "Mirror5");
-      } 
-      if(sentence.get(i).equals("Am")){
-        sentence.set(i, "Mirror6");
-      } 
-      if(sentence.get(i).equals("you")){
-        sentence.set(i, "Mirror7");
-      }
-      if(sentence.get(i).equals("You")){
-        sentence.set(i, "Mirror8");
-      }
-      if(sentence.get(i).equals("my")){
-        sentence.set(i, "Mirror9");
-      }
-      if(sentence.get(i).equals("My")){
-        sentence.set(i, "Mirror10");
-      }
-      if(sentence.get(i).equals("your")){
-        sentence.set(i, "Mirror11");
-      }
-      if(sentence.get(i).equals("Your")){
-        sentence.set(i, "Mirror12");
-      }
+      for (int i = 0; i< sentence.size(); i++){
+        if(sentence.get(i).equals("I")){
+          sentence.set(i, "Mirror1");
+        }
+        if(sentence.get(i).equals("i")){
+          sentence.set(i, "Mirror2");
+        }
+        if(sentence.get(i).equals("Me")){
+          sentence.set(i, "Mirror3");
+        }
+        if(sentence.get(i).equals("me")){
+          sentence.set(i, "Mirror4");
+        }
+        if(sentence.get(i).equals("am")){
+          sentence.set(i, "Mirror5");
+        } 
+        if(sentence.get(i).equals("Am")){
+          sentence.set(i, "Mirror6");
+        } 
+        if(sentence.get(i).equals("you")){
+          sentence.set(i, "Mirror7");
+        }
+        if(sentence.get(i).equals("You")){
+          sentence.set(i, "Mirror8");
+        }
+        if(sentence.get(i).equals("my")){
+          sentence.set(i, "Mirror9");
+        }
+        if(sentence.get(i).equals("My")){
+          sentence.set(i, "Mirror10");
+        }
+        if(sentence.get(i).equals("your")){
+          sentence.set(i, "Mirror11");
+        }
+        if(sentence.get(i).equals("Your")){
+          sentence.set(i, "Mirror12");
+        }
 
 
 
 
-      if(sentence.get(i).equals("Mirror1")){
-        sentence.set(i, "You");
-      }
-      if(sentence.get(i).equals("Mirror2")){
-        sentence.set(i, "you");
-       }
-       if(sentence.get(i).equals("Mirror3")){
-        sentence.set(i, "You");
-       }
-       if(sentence.get(i).equals("Mirror4")){
-        sentence.set(i, "you");
-       }
-       if(sentence.get(i).equals("Mirror5")){
-        sentence.set(i, "are");
-       }
-       if(sentence.get(i).equals("Mirror6")){
-        sentence.set(i, "Are");
-       }
-       if(sentence.get(i).equals("Mirror7")){
-        sentence.set(i, "I");
-       }
-       if(sentence.get(i).equals("Mirror8")){
-        sentence.set(i, "I");
-       }
-       if(sentence.get(i).equals("Mirror9")){
-        sentence.set(i, "your");
-       }
-       if(sentence.get(i).equals("Mirror10")){
-        sentence.set(i, "Your");
-       }
-       if(sentence.get(i).equals("Mirror11")){
-        sentence.set(i, "my");
-       }
-       if(sentence.get(i).equals("Mirror12")){
-        sentence.set(i, "My");
-       }
+        if(sentence.get(i).equals("Mirror1")){
+          sentence.set(i, "You");
+        }
+        if(sentence.get(i).equals("Mirror2")){
+          sentence.set(i, "you");
+        }
+        if(sentence.get(i).equals("Mirror3")){
+          sentence.set(i, "You");
+        }
+        if(sentence.get(i).equals("Mirror4")){
+          sentence.set(i, "you");
+        }
+        if(sentence.get(i).equals("Mirror5")){
+          sentence.set(i, "are");
+        }
+        if(sentence.get(i).equals("Mirror6")){
+          sentence.set(i, "Are");
+        }
+        if(sentence.get(i).equals("Mirror7")){
+          sentence.set(i, "I");
+        }
+        if(sentence.get(i).equals("Mirror8")){
+          sentence.set(i, "I");
+        }
+        if(sentence.get(i).equals("Mirror9")){
+          sentence.set(i, "your");
+        }
+        if(sentence.get(i).equals("Mirror10")){
+          sentence.set(i, "Your");
+        }
+        if(sentence.get(i).equals("Mirror11")){
+          sentence.set(i, "my");
+        }
+        if(sentence.get(i).equals("Mirror12")){
+          sentence.set(i, "My");
+        }
 
+      }
+      return (sentence +"?");
+    
     }
-    return (sentence +"?");
-  
-  }
   } 
 
 
