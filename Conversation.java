@@ -9,6 +9,7 @@ class Conversation implements Chatbot {
   int rounds;
   ArrayList<String> transcript;
   String reply;
+  ArrayList<String> wordList;
 
   /**
    * Constructor 
@@ -17,7 +18,7 @@ class Conversation implements Chatbot {
     this.rounds = rounds;
     this.transcript = transcript;
     this.reply = reply;
-
+    this.wordList = new ArrayList<>();
 
   }
     
@@ -37,42 +38,22 @@ class Conversation implements Chatbot {
     
     System.out.println("Welcome! What's up?");
 
-    /**Create a while loop where the user is given a response and prompted to say more for 1 less rounds than however many rounds they entered*/
+    /**Create a while loop where the user is given a response and prompted to say more for however many rounds they entered*/
     int i = 1;
-    while (i < (rounds)){
+    while (i <= (rounds)){
       i++;
       String response = scanner.nextLine();
       transcript.add(response  + "\n");
-      if(response.equals("")){
-        System.out.println("What's up?");
-        transcript.add("What's up? \n");
-      } 
-      else{
-        if(i <= rounds - 1){
+     
+        if(i <= rounds){
         System.out.println(mirrorWord(response));
          transcript.add(mirrorWord(response));
         }
-        else{
-          System.out.println(mirrorWord(response));
-         transcript.add(mirrorWord(response));
-        }
-      }
-      
     }
-    
-    /**give the final round some variation, and inform the user that the chat is coming to an end */
-    //String response = scanner.nextLine();
-   // transcript.add(response +"\n");
-   // System.out.println("Is there anything else you would like to share with me before we finish chatting?");
-   // transcript.add("Is there anything else you would like to share with me before we finish chatting? \n");
-    //String finalResponse = scanner.nextLine();
-    //transcript.add(finalResponse + "\n");
-    
+
     /**Ends the conversation */
     System.out.println("Okay! I have enjoyed our converstion. Thanks for chatting!");
     transcript.add("Okay! I have enjoyed our converstion. Thanks for chatting! \n");
-
-
   
   }
     /**
@@ -82,6 +63,27 @@ class Conversation implements Chatbot {
      * @return String with new mirrorword or a canned response
      */
   public String mirrorWord(String s) {
+    /**If there are no mirror words, a canned response if randomly generated. */
+    if((!s.contains("I")) && (!s.contains("i")) && (!s.contains("Me")) && (!s.contains("me")) && (!s.contains("Am")) && (!s.contains("am")) && (!s.contains("You")) && (!s.contains("you")) && (!s.contains("My")) && (!s.contains("my")) && (!s.contains("Your")) && (!s.contains("your"))){
+      wordList.add("Please go on.");
+      wordList.add("Facinating! Tell me more!");
+      wordList.add("Interesting! Go on.");
+      wordList.add("Please explain.");
+      wordList.add("Please tell me more.");
+      wordList.add("I am intrigued! Go on.");
+      wordList.add("Please continue.");
+      wordList.add("I would love to hear more.");
+      wordList.add("Do tell!");
+      wordList.add("Could you elaborate?");
+
+      Random random = new Random();
+      int randomNum = random.nextInt(10);
+      String cannedResponse = wordList.get(randomNum);
+      return cannedResponse;
+    }
+
+    /**If there are mirror words, then the response is split into components, and each component is checked to see if it is a mirror word. Mirror words are then assigned a label of "Mirror(Int)", and then changed into their mirrored state. */
+    else{
     
     s.split(" ");
     ArrayList<String> sentence = new ArrayList<>(Arrays.asList(s.split(" ")));
@@ -122,42 +124,10 @@ class Conversation implements Chatbot {
       if(sentence.get(i).equals("Your")){
         sentence.set(i, "Mirror12");
       }
-      else{
-        Random random = new Random();
-        int randomNum = random.nextInt(10);
-        if(randomNum == 0){
-          sentence.set(i, "Please go on.");
-        }
-        if(randomNum == 1){
-          sentence.set(i, "Facinating! Tell me more!");
-        }
-        if(randomNum == 2){
-          sentence.set(i, "Interesting! Go on.");
-        }
-        if(randomNum == 3){
-          sentence.set(i, "Please explain.");
-        }
-        if(randomNum == 4){
-          sentence.set(i, "Please tell me more.");
-        }
-        if(randomNum == 5){
-          sentence.set(i, "I am intrigued! Go on.");
-        }
-        if(randomNum == 6){
-          sentence.set(i, "Please continue.");
-        }
-        if(randomNum == 7){
-          sentence.set(i, "I would love to hear more.");
-        }
-        if(randomNum == 8){
-          sentence.set(i, "Do tell!");
-        }
-        if(randomNum == 9){
-          sentence.set(i, "Could you elaborate?");
-        }
 
-        // random canned responses go here. Create an arraylist, randomly return an index.
-      }
+
+
+
       if(sentence.get(i).equals("Mirror1")){
         sentence.set(i, "You");
       }
@@ -199,6 +169,7 @@ class Conversation implements Chatbot {
     return (sentence +"?");
   
   }
+  } 
 
 
   /**
