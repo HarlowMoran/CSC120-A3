@@ -6,20 +6,15 @@ class Conversation implements Chatbot {
 
 
   // Attributes 
-  int rounds;
   ArrayList<String> transcript;
-  String reply;
   ArrayList<String> wordList;
 
   /**
    * Constructor 
    */
-  Conversation(int rounds, ArrayList <String> transcript, String reply) {
-    this.rounds = rounds;
-    this.transcript = transcript;
-    this.reply = reply;
+  Conversation(){
+    this.transcript = new ArrayList<>();
     this.wordList = new ArrayList<>();
-
   }
     
 
@@ -27,10 +22,12 @@ class Conversation implements Chatbot {
    * Starts and runs the conversation with the user
    */
   public void chat() {
+
+
     /**Ask user to imput the number of rounds */
-    Scanner imput = new Scanner(System.in);
+    Scanner input = new Scanner(System.in);
     System.out.println("How many rounds?");
-    int rounds = imput.nextInt();
+    int rounds = input.nextInt();
 
     /**Engage in back-and-forth with the user */
     Scanner scanner = new Scanner(System.in);
@@ -192,11 +189,7 @@ class Conversation implements Chatbot {
 
   public static void main(String[] arguments) {
 
-    int initialRounds = 0;
-    ArrayList<String> initialTranscript = new ArrayList<>();
-    String initialReply = "";
-
-    Conversation myConversation = new Conversation(initialRounds, initialTranscript, initialReply);
+    Conversation myConversation = new Conversation();
     myConversation.chat();
     myConversation.printTranscript();
 
